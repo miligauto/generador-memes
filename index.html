@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="dark-mood">
     <header class="container">
         <h1 class="title">Generador de memes</h1>
         <div class="container-text">
@@ -19,7 +19,11 @@
                 Texto</button>
             <button class="boton">
                 <img src="icon/luz.icon.png" alt="claro-oscuro">
-                Modo Claro</button>
+                Modo Oscuro</button>
+            <button class="boton">
+                <img src="icon/luz.icon.png" alt="claro-oscuro">
+                Modo Claro
+            </button>
         </div>
     </header>
 
@@ -39,6 +43,74 @@
             <button class="download-meme">Descargar meme</button>
         </div>
     </main>
+
+    <aside class="aside-img-txt">
+        <section class="seccion-imagen">
+
+            <!--IMAGEN -->
+           <h2 class="title-img">IMAGEN</h2>
+           <div class="opciones">
+                <p class="panel-opciones">URL</p>
+                <input type="url" name="url-img" id="url-img" class="input-aside">
+           </div>
+
+           <!--FONDO-->
+           <div class="opciones">
+                <p class="panel-opciones">FONDO</p>
+                <div class="container-panel-color">
+                    <div class="panel-color">
+                        <input type="color" name="color-input" class="input-aside">
+                    </div>
+                    <div class="opcion-fondo">
+                        <select name="select" id="select-option" class="opciones-fondo">
+                            <option value="option1">Ninguno</option>
+                            <option value="option2">Aclarar</option>
+                            <option value="option3">Oscurecer</option>
+                            <option value="option4">Diferencia</option>
+                            <option value="option5">Luminosidad</option>
+                            <option value="option6">Multiplicar</option>
+                        </select>
+                    </div>
+                </div>
+           </div>
+
+
+           <!--FILTROS-->
+           <div class="opciones">
+                <p class="panel-opciones">FILTROS</p>
+                <label for="brillo"> BRILLO
+                    <input type="range" id="brillo" min="0" max="1" step="0.1" value="1">
+                </label>
+                <label for="opacidad"> OPACIDAD
+                    <input type="range" id="opacidad" min="0" max="1" step="0.1" value="1">
+                </label>
+                <label for="contraste"> CONTRASTE
+                    <input type="range" id="contraste" min="100" max="1000" step="0.1" value="0">
+                </label>
+                <label for="desenfoque"> DESENFOQUE
+                    <input type="range" id="desenfoque" min="0" max="10" step="0.1" value="0">
+                </label>
+                <label for="grises"> ESCALA DE GRISES
+                    <input type="range" id="grises" min="0" max="100" step="1" value="0">
+                </label>
+                <label for="sepia"> SEPIA
+                    <input type="range" id="sepia" min="0" max="100" step="1" value="0">
+                </label>
+                <label for="hue"> HUE
+                    <input type="range" id="hue" min="0" max="359" step="1" value="0">
+                </label>
+                <label for="saturacion"> SATURACION
+                    <input type="range" id="saturacion" min="100" max="1000" step="10" value="100">
+                </label>
+                <label for="negativo"> NEGATIVO
+                    <input type="range" id="negativo" min="0" max="1" step="0.1" value="0">
+                </label>
+           </div>
+           <button class="boton-filtros">Restablecer filtros</button>
+        </section>
+
+    
+    </aside>
     
 </body>
 </html>

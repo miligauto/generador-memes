@@ -7,20 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="dark-mood">
+<body class="modo-oscuro" id="body">
     <header class="container">
         <h1 class="title">Generador de memes</h1>
         <div class="container-text">
-            <button class="boton">
+            <button class="boton" id="boton-imagen">
                 <img src="icon/imagen.icon.png" alt="imagen">
                 Imagen</button>
-            <button class="boton">
+            <button class="boton" id="boton-texto">
                 <img src="icon/texto.icon.png" alt="texto">
                 Texto</button>
-            <button class="boton">
+            <button class="boton hidden" id="boton-oscuro">
                 <img src="icon/luz.icon.png" alt="claro-oscuro">
                 Modo Oscuro</button>
-            <button class="boton">
+            <button class="boton" id="boton-claro">
                 <img src="icon/luz.icon.png" alt="claro-oscuro">
                 Modo Claro
             </button>
@@ -44,8 +44,13 @@
         </div>
     </main>
 
-    <aside class="aside-img-txt">
-        <section class="seccion-imagen">
+    <aside class="aside-img-txt" id="panel">
+
+        <button class="boton-cierre-panel" id="boton-cierre-panel">
+            <img src="icon/cierre.icon.png" alt="boton-de-cierre">
+        </button>
+
+        <section class="seccion-imagen" id="panel-img">
 
             <!--IMAGEN -->
            <h2 class="title-img-texto">IMAGEN</h2>
@@ -109,9 +114,11 @@
            <button class="boton-filtros">Restablecer filtros</button>
         </section>
 
+       
         <!--TEXTO-->
 
-        <section id="seccion-texto" class="modo-texto">
+        <section class="modo-texto" id="panel-texto">
+
             <div class="panel-texto">
               <h2 class="title-img-texto">TEXTO</h2>
               <div class="box-texto">
@@ -160,7 +167,7 @@
               </div>
      
             </div>
-            
+
             <div class="color-texto">
              <div class="ajustes-color">
 
@@ -216,6 +223,8 @@
           </section>
 
     </aside>
+
+    <script src="app.js"></script>
     
 </body>
 </html>

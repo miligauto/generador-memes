@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 
-.body.dark {
-    --color-header: #1a1d24;
+.body-oscuro {
+    --color-header: #363941;
     --color-background: #30343F;
     --color-aside: #181a20;
     --color-input: #5a5d68;
@@ -14,8 +14,8 @@
     --color-text: #ffffff;
 }
 
-.body.light {
-    --color-header: #cccaca;
+.body-claro {
+    --color-header: #e7e7e7;
     --color-background: #eeeeee;
     --color-aside: #fafafa;
     --color-boton: #e0e0e0;
@@ -83,7 +83,6 @@
     min-height: 90vh;
     gap: 20px;
     background-color: var(--color-background);
-    height: 765px;
 }
 
 .box-text-meme {
@@ -120,18 +119,18 @@
     background-color: black;
 }
 
-.boton-download {
+/*.boton-download {
     display: flex;
     flex-direction: column;
-}
+}*/
 
 .download-meme {
     background-color: #630863;
     color: white;
     border: 0;
-    margin-top: 35px;
+    margin-top: 30px;
     padding: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     width: 140px;
     height: 40px;
     border-radius: 15px;
@@ -140,15 +139,16 @@
 
 .aside-img-txt {
     width: 240px;
+    height: 100%;
     background-color: var(--color-aside);
     position: absolute;
     top: 0;
     right: 0;
 }
 
-/*.seccion-imagen {
+.seccion-imagen {
     display: none;
-}*/
+}
 
 .title-img-texto {
     text-align: center;
@@ -255,9 +255,9 @@ input[type=range]::-webkit-slider-thumb {
     cursor: pointer;
 }
 
-/*.eleccion-texto {
+.modo-texto {
     display: none;
-}*/
+}
 
 .panel-texto {
     margin-top: 5px;
@@ -267,7 +267,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .text-a {
-    background-color: val(--color-background);
+    background-color: var(--color-background);
     width: 100%;
     height: 36px;
     border: none;
@@ -275,7 +275,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 textarea {
-    color: white;
+    color: var(--color-text);
     font-size: 19px;
     font-weight: lighter;
     padding-top: 10px;
@@ -285,7 +285,7 @@ textarea {
 .box-estilo {
     font-weight: 300;
     font-size: 12px;
-    color: white;
+    color: var(--color-text);
     margin-top: 10px;
 }
 
@@ -298,7 +298,7 @@ textarea {
     width: 100%;
     height: 35px;
     border: 0;
-    color: white;
+    color: var(--color-text);
     padding: 5px 8px;
     border-radius: 4px;
 }
@@ -317,7 +317,7 @@ textarea {
     border: 0;
     border-radius: 4px;
     padding: 5px 10px;
-    color: white;
+    color: var(--color-text);
 }
 
 .container-botones {
@@ -336,7 +336,7 @@ textarea {
     border-radius: 5px;
     font-size: 14px;
     background-color: var(--color-background);
-    color: (--color-boton);
+    color: var(--color-boton);
     margin-top: 5px;
     margin-left: 4px;
     border: 0;
@@ -426,7 +426,7 @@ textarea {
     height: 40px;
     padding: 0 10px;
     background-color: var(--color-boton);
-    color: white;
+    color: var(--color-text);
     border: 0;
     border-radius: 3px;
     font-size: 14px;
@@ -444,7 +444,7 @@ textarea {
     width: 100%;
     height: 36px;
     background-color: var(--color-background);
-    color: white;
+    color: var(--color-text);
     border: 0;
     border-radius: 3px;
     padding: 0 10px;
@@ -465,4 +465,21 @@ textarea {
     border-radius: 3px;
     padding: 0 10px;
     font-size: 14px;
+}
+
+.hidden {
+    display: none;
+}
+
+.boton-cierre-panel {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.boton-cierre-panel:hover {
+    cursor: pointer;
+}
+
+.boton-cierre-panel img {
+    width: 20px;
 }

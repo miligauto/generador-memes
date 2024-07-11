@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generador-de-memes</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+            integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
+            integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
+            crossorigin="anonymous"></script>
 </head>
 
 <body class="modo-oscuro" id="body">
@@ -29,11 +35,11 @@
 
     <main class="box-container-meme">
         <div class="box-text-meme">
-            <div class=" box-text">
+            <div class="box-text">
                 <p class="text-meme">TOP TEXT</p>
             </div>
-            <div class="img-meme">
-                <!--imagen del meme-->
+            <div class="img-meme" id="meme-img">
+                <img src="" alt="" id="img-meme">
             </div>
             <div class="box-text">
                 <p class="text-meme">BOTTOM TEXT</p>
@@ -64,16 +70,16 @@
                 <p class="panel-opciones">FONDO</p>
                 <div class="container-panel-color">
                     <div class="panel-color">
-                        <input type="color" name="color-input" class="input-aside">
+                        <input type="color" name="color-input" id="color-input" class="input-aside">
                     </div>
                     <div class="opcion-fondo">
                         <select name="select" id="select-option" class="opciones-fondo">
-                            <option value="option1">Ninguno</option>
-                            <option value="option2">Aclarar</option>
-                            <option value="option3">Oscurecer</option>
-                            <option value="option4">Diferencia</option>
-                            <option value="option5">Luminosidad</option>
-                            <option value="option6">Multiplicar</option>
+                            <option value="ninguno">Ninguno</option>
+                            <option value="aclarar">Aclarar</option>
+                            <option value="oscurecer">Oscurecer</option>
+                            <option value="diferencia">Diferencia</option>
+                            <option value="luminosidad">Luminosidad</option>
+                            <option value="multiplicar">Multiplicar</option>
                         </select>
                     </div>
                 </div>
@@ -111,7 +117,7 @@
                     <input type="range" id="negativo" min="0" max="1" step="0.1" value="0">
                 </label>
            </div>
-           <button class="boton-filtros">Restablecer filtros</button>
+           <button class="boton-filtros" id="restablecer-filtros">Restablecer filtros</button>
         </section>
 
        

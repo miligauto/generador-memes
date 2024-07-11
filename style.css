@@ -483,3 +483,13 @@ textarea {
 .boton-cierre-panel img {
     width: 20px;
 }
+
+.img-meme {
+    width: 100%;
+    /*height: 300px;*/
+}
+
+#img-meme {
+    width: 100%;
+    height: 100%;
+}

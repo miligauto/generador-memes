@@ -6,11 +6,11 @@
     <title>Generador-de-memes</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
-            integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
-            crossorigin="anonymous"></script>
+    integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+    crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
-            integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
-            crossorigin="anonymous"></script>
+    integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
+    crossorigin="anonymous"></script>
 </head>
 
 <body class="modo-oscuro" id="body">
@@ -34,19 +34,19 @@
     </header>
 
     <main class="box-container-meme">
-        <div class="box-text-meme">
+        <div class="box-text-meme" id="meme-generado">
             <div class="box-text">
-                <p class="text-meme">TOP TEXT</p>
+                <p class="text-meme" id="top-text">TOP TEXT</p>
             </div>
             <div class="img-meme" id="meme-img">
                 <img src="" alt="" id="img-meme">
             </div>
             <div class="box-text">
-                <p class="text-meme">BOTTOM TEXT</p>
+                <p class="text-meme" id="bottom-text">BOTTOM TEXT</p>
             </div>
         </div>
         <div>
-            <button class="download-meme">Descargar meme</button>
+            <button class="download-meme" id="descargar-meme">Descargar meme</button>
         </div>
     </main>
 
@@ -70,7 +70,7 @@
                 <p class="panel-opciones">FONDO</p>
                 <div class="container-panel-color">
                     <div class="panel-color">
-                        <input type="color" name="color-input" id="color-input" class="input-aside">
+                        <input type="color" name="color-input" id="color-input" class="input-aside" value="#ffffff">
                     </div>
                     <div class="opcion-fondo">
                         <select name="select" id="select-option" class="opciones-fondo">
@@ -90,34 +90,34 @@
            <div class="opciones">
                 <p class="panel-opciones">FILTROS</p>
                 <label for="brillo" class="opciones-filtros">BRILLO
-                    <input type="range" id="brillo" min="0" max="1" step="0.1" value="1">
+                    <input type="range" name="brillo" id="brillo" min="0" max="1" step="0.1" value="1"/>
                 </label>
                 <label for="opacidad" class="opciones-filtros">OPACIDAD
-                    <input type="range" id="opacidad" min="0" max="1" step="0.1" value="1">
+                    <input type="range" name="opacidad" id="opacidad" min="0" max="1" step="0.1" value="1"/>
                 </label>
                 <label for="contraste" class="opciones-filtros">CONTRASTE
-                    <input type="range" id="contraste" min="100" max="1000" step="0.1" value="0">
+                    <input type="range" name="contraste" id="contraste" min="100" max="1000" step="0.1" value="0"/>
                 </label>
                 <label for="desenfoque" class="opciones-filtros">DESENFOQUE
-                    <input type="range" id="desenfoque" min="0" max="10" step="0.1" value="0">
+                    <input type="range" name="desenfoque" id="desenfoque" min="0" max="10" step="0.1" value="0"/>
                 </label>
                 <label for="grises" class="opciones-filtros">ESCALA DE GRISES
-                    <input type="range" id="grises" min="0" max="100" step="1" value="0">
+                    <input type="range" name="grises" id="grises" min="0" max="100" step="1" value="0"/>
                 </label>
                 <label for="sepia" class="opciones-filtros">SEPIA
-                    <input type="range" id="sepia" min="0" max="100" step="1" value="0">
+                    <input type="range" name="sepia" id="sepia" min="0" max="100" step="1" value="0"/>
                 </label>
                 <label for="hue" class="opciones-filtros">HUE
-                    <input type="range" id="hue" min="0" max="359" step="1" value="0">
+                    <input type="range" name="hue" id="hue" min="0" max="359" step="1" value="0"/>
                 </label>
                 <label for="saturacion" class="opciones-filtros">SATURACION
-                    <input type="range" id="saturacion" min="100" max="1000" step="10" value="100">
+                    <input type="range" name="saturacion" id="saturacion" min="100" max="1000" step="10" value="100"/>
                 </label>
                 <label for="negativo" class="opciones-filtros">NEGATIVO
-                    <input type="range" id="negativo" min="0" max="1" step="0.1" value="0">
+                    <input type="range" name="negativo" id="negativo" min="0" max="1" step="0.1" value="0"/>
                 </label>
            </div>
-           <button class="boton-filtros" id="restablecer-filtros">Restablecer filtros</button>
+           <button class="boton-filtros" id="restablecer_filtros">Restablecer filtros</button>
         </section>
 
        
@@ -129,25 +129,26 @@
               <h2 class="title-img-texto">TEXTO</h2>
               <div class="box-texto">
                 <p class="panel-opciones">SUPERIOR</p>
-                <textarea  class="text-a" id="" aria-label="Texto Top">TOP TEXT</textarea>
+                <textarea  class="text-a" id="input-top-text">TOP TEXT</textarea>
                 <div class="box-estilo">
-                  <input type="checkbox" id="checkbox"/>
-                  <label for="checkbox">Sin texto superior</label>
+                  <input type="checkbox" id="sin-texto-superior">
+                    <label for="sin-texto-superior">Sin texto superior</label>
                 </div>
               </div>
               <div class="panel-editor">
                 <p class="panel-opciones">INFERIOR</p>
-                <textarea  class="text-a" id="" aria-label="Texto Bottom">BOTTOM TEXT</textarea>
+                <textarea  class="text-a" id="bottom-text-inf">BOTTOM TEXT</textarea>
                 <div class="box-estilo">
-                  <input type="checkbox" id="checkbox"/>
-                  <label for="checkbox">Sin texto superior</label>
+                  <input type="checkbox" id="sin-texto-inferior">
+                  <label for="checkbox">Sin texto inferior</label>
                 </div>
               </div>
 
-
+                
+              <!--FUENTE-->
               <div class="panel-editor">
                 <p class="panel-opciones">FUENTE</p>
-                <select class="eleccion-opciones" name="cars" id="cars">
+                <select class="eleccion-opciones" name="selected" id="opciones-fondo">
                   <option value="Arial">Arial</option>
                   <option value="Arial-black">Arial-black</option>
                   <option value="American Typewriter">American Typewriter</option>
@@ -161,11 +162,11 @@
                 </select>
 
                 <div class="eleccion-fuente">
-                  <input type="number" name="font size" aria-label="font size" class="input-fuente" id="" min="12" value="40">
+                  <input type="number" name="tamaño de fuente" aria-label="font size" class="input-fuente" id="tamaño-fuente" min="12" value="40">
                   <div class="container-botones">
-                    <button class="boton-fuente"><i class="fas fa-align-left"></i></button>
-                    <button class="boton-fuente"><i class="fas fa-align-center"></i></button>
-                    <button class="boton-fuente"><i class="fas fa-align-right"></i></button>
+                    <button class="boton-fuente" id="texto-izquierda"><i class="fa-solid fa-align-left"></i></button>
+                    <button class="boton-fuente" id="texto-centro"><i class="fa-solid fa-align-center" ></i></button>
+                    <button class="boton-fuente" id="texto-derecha"><i class="fa-solid fa-align-right"></i></button>
                   </div>
      
                 </div> 
@@ -179,21 +180,21 @@
 
               <div class="contenedor-color-texto">
                 <p class="panel-opciones">COLOR</p>
-   
-                  <input type="color" id="color-input-text" class="input-font" name="color-input-text" value="#000000"> 
-               
+                    <input type="color" id="color-texto" class="input-font" value="#000000"> 
+                    <span id="color-texto-opcion">#000000</span>
               </div>
 
               <div class="texto-fondo">
                 <p class="panel-opciones">FONDO</p>
                 <label for="input-color-fondo">
-                  <input type="color" id="input-color-fondo" class="input-fondo" name="input-color-fondo" value="#FFFFFF" >
+                  <input type="color" id="color-fondo-texto" class="input-fondo" value="#FFFFFF" >
+                  <span id="color-fondo-opcion">#FFFFFF</span>
                 </label>
               </div>
             </div>
 
             <div class="fondo-transparente">
-              <input type="checkbox" class="checkbox">
+              <input type="checkbox" class="checkbox" id="opcion-fondo-transparente">
               <label class="color-transparente">Fondo Transparente</label>
             </div>
           </div>
@@ -201,9 +202,9 @@
           <div class="contorno">
             <p class="panel-opciones">CONTORNO</p>
             <div class="botones-contorno">
-              <button class="boton-contorno">Ninguno</button>
-              <button class="boton-contorno">Claro</button>
-              <button class="boton-contorno">Oscuro</button>
+              <button class="boton-contorno" id="contorno-ninguno">Ninguno</button>
+              <button class="boton-contorno" id="contorno-claro">Claro</button>
+              <button class="boton-contorno" id="contorno-oscuro">Oscuro</button>
               
             </div>
      
@@ -211,12 +212,12 @@
 
            <div class="espaciado">
             <p class="panel-opciones">ESPACIADO</p>
-            <input type="number" class="input-espaciado" aria-label="Espaciado" min="10" max="50" value="35">
+            <input type="number" class="input-espaciado" id="espaciado" aria-label="Espaciado" min="10" max="50" value="35">
            </div>
 
            <div class="interlineado">
             <p class="panel-opciones">INTERLINEADO</p>
-            <select class="opcion-interlineado">
+            <select class="opcion-interlineado" id="interlineado">
               <option value="0.8">0.8</option>
               <option value="1">1</option>
               <option value="1.2" selected="">1.2</option>

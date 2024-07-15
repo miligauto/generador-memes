@@ -513,3 +513,29 @@ textarea {
     width: 100%;
     height: 100%;
 }
+
+
+/* MOBILE */ 
+@media (min-width: 320px) and (max-width 621px) {
+    .container-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .boton {
+        width: 80px;
+    }
+
+    .aside-img-txt {
+        width: 100%;
+    }
+}
+
+/* TABLET */
+
+@media (max-width: 777px) and (min-width: 620px) {
+    .aside-img-txt {
+        width: 100%;
+    }
+}
